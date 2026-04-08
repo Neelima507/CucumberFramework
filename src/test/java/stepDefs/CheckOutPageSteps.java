@@ -37,6 +37,11 @@ public CheckOutPageSteps(TestContext context) {
 		Assert.assertTrue(checkOutPage.VerifyPlacedOrder());
 		
 	}
+	@Then("verify user can place order")
+	public void verify_user_can_place_order() {
+		Assert.assertTrue(checkOutPage.VerifyPromoBtn());
+		Assert.assertTrue(checkOutPage.VerifyPlacedOrder());
+	}
 	
 
 

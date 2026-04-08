@@ -12,11 +12,17 @@ public class TestContext {
 	public PageObjectManager pageObjectManager;
 	public TestBase testBase;
 	public GenericUtils genericUtils;
+	public WaitUtils waitUtils;
 	
 	public TestContext() throws IOException {
 		
 		testBase=new TestBase();
-		pageObjectManager=new PageObjectManager(testBase.WebDriverManager());
-		genericUtils=new GenericUtils(testBase.WebDriverManager());
-	}
+		driver = testBase.WebDriverManager();   // ✅ ONLY ONCE
+
+        waitUtils = new WaitUtils(driver);
+        genericUtils = new GenericUtils(driver);
+
+        // ✅ Pass both driver + waitUtils
+        pageObjectManager = new PageObjectManager(driver, waitUtils);
+    }
 }

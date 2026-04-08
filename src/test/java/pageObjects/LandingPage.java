@@ -12,6 +12,7 @@ public class LandingPage {
 	By topDealsLink=By.linkText("Top Deals");
 	By increment=By.cssSelector("a.increment");
 	By addToCart=By.cssSelector(".product-action button");
+	By flightLink=By.linkText("Flight Booking");
 	
 	public LandingPage(WebDriver driver) {
 		this.driver=driver;
@@ -40,5 +41,10 @@ public class LandingPage {
 	}
 	public String getcurrentTitle() {
 		return driver.getTitle();
+	}
+	public void selectFlightPage() {
+		driver.findElement(flightLink).click();
+	
+		
 	}
 }

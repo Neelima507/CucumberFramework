@@ -38,7 +38,7 @@ public class OffersPageSteps {
 		
 		LandingPage landingPage=context.pageObjectManager.getLandingPage();
 		landingPage.selectTopDealsPage();
-		context.genericUtils.switchWindowToChild();
+		context.genericUtils.switchWindowToChild(offerPageProductName);
 		
 
 	}

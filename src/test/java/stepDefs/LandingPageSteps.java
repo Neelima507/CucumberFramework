@@ -44,5 +44,24 @@ public class LandingPageSteps {
 		landingPage.selectAddToCart();
 		
 	}
+	@Given("User is on home page")
+	public void user_is_on_home_page() {
+		System.out.println("user is on Home page");
+		Assert.assertTrue(landingPage.getcurrentTitle().contains("GreenK"));
+	}
+	@Given("User landed on home page")
+	public void user_landed_on_home_page() {
+	   System.out.println("User landed on home page------------flight page going to land");
+	}
+
+	@When("user clicks on flight link")
+	public void user_clicks_on_flight_link() {
+		landingPage.selectFlightPage();
+		context.genericUtils.switchWindowToChild("Flight Booking");
+		System.out.println(landingPage.getcurrentTitle());
+	}
+
+
+	
 
 }
